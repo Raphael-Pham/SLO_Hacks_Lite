@@ -49,10 +49,6 @@ app.post('/yelp_req', async (req, res) => {
   res.status(200).send({name: yelp_res});
 });
 
-// SERVER HOSTING
-app.listen(3001, function() {
-  console.log('we are on 3001');
-})
 // Yelp Picker:
 app.post('/yelp_req', (req, res) => {
   const thislocation = req.body.location;
