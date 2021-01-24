@@ -1,6 +1,5 @@
 const getLocationForm = () => {
-   var form = document.getElementById('search');
-
+   var form = document.getElementById('fname');
    const data = {location: form.value};
 
    fetch('/yelp_req', {
@@ -8,7 +7,10 @@ const getLocationForm = () => {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data),
    })
-      .then(res => res.json())
+      .then(res => {
+         console.log(res);
+         return res.json();
+      })
       .then(data => {
          console.log(`Success:`, data);
    })
@@ -17,7 +19,9 @@ const getLocationForm = () => {
    });
 }
 
-document.addEventListener('click', event => {
-   if (event.target.id === 'submit')
-      getLocationForm();
-})
+document.addEventListener('keypress', function (e) {
+   if (e.key === 'Enter') {
+     getLocationForm();
+     e.preventDefault();
+   }
+});
