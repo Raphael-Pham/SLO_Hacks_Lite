@@ -58,14 +58,17 @@ app.post('/yelp_req', (req, res) => {
 });
 
 // Grocery List:
-app.post('/groceries_req', (req, res) => {
+app.post('/groceries_add', (req, res) => {
+    var retItem;
    groceryCol.insertOne(req.body)
       .then(result => {
-         console.log(result)
+        retItem = result.item;
+         console.log(result);
       })
       .catch(error => console.error(error))
+      res.status(200).send({item: retItem});
 });
-app.delete('/groceries_req', (req, res) => {
+app.delete('/groceries_delete', (req, res) => {
    groceryCol.deleteOne(
       { item: req.body.item }
    )
@@ -74,7 +77,7 @@ app.delete('/groceries_req', (req, res) => {
       })
       .catch(error => console.error(error))
 });
-app.get('/groceries_req', (req, res) => {
+app.get('/groceries_getAll', (req, res) => {
    database.collection('groceryCol').find().toArray()
       .then(results => {
          console.log(results)

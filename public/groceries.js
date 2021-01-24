@@ -1,9 +1,9 @@
 const getGroceryForm = () => {
-   var form = document.getElementById('search');
+   var form = document.getElementById('fname');
 
    const entry = {item: form.value};
 
-   fetch('/groceries_req', {
+   fetch('/groceries_add', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(entry),
@@ -17,7 +17,9 @@ const getGroceryForm = () => {
    });
 }
 
-document.addEventListener('click', event => {
-   if (event.target.id === 'submit')
-      getGroceryForm();
-})
+document.addEventListener('keypress', function (e) {
+   if (e.key === 'Enter') {
+     getGroceryForm();
+     e.preventDefault();
+   }
+});

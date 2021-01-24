@@ -1,5 +1,5 @@
 const getIngredientForm = () => {
-   var form = document.getElementById('search');
+   var form = document.getElementById('fname');
 
    const entry = {ingredient: form.value};
 
@@ -17,7 +17,9 @@ const getIngredientForm = () => {
    });
 }
 
-document.addEventListener('click', event => {
-   if (event.target.id === 'submit')
-      getIngredientForm();
-})
+document.addEventListener('keypress', function (e) {
+   if (e.key === 'Enter') {
+     getIngredientForm();
+     e.preventDefault();
+   }
+});

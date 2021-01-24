@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,
-  initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <title>SLOHACKS</title>
-</head>
-
-<body>
-
-  <div class="header">
-    <h1>Indecision</h1>
-  </div>
-
-  <div class = "navbar">
-    <a href="#">Feature 1</a>
-    <a href="https://youtu.be/dQw4w9WgXcQ">Feature 2</a>
-    <a href="https://youtu.be/dQw4w9WgXcQ">Feature 3</a>
-    <a href="https://youtu.be/dQw4w9WgXcQ" class="right">About</a>
-  </div>
-
-  <div class=background>
-    <l1 id="line1">Find Fine Cuisine Find</l1>
-    <l2 id="line2">Fine Cuisine Find Fine</l2>
-    <l3 id="line3">Cuisine Find Fine Cuis</l3>
-  </div>
-
-  <div class = feature>
-    <form class = "main">
-      <input type="text" placeholder="Location.." id="fname" name="fname">
-    </form>
-  </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Restaurant</title>
+  </head>
+  
+  <body onload="animate()">
+  
+    <div class="header">
+      <img src="logo.png" alt="logo" ALIGN=left />
+    </div>
+  
+    <div class="purpose">Food for the Indecisive</div>
+  
+    <div class = "navbar">
+      <a href="#">Restaurant </a>
+      <a href="https://youtu.be/dQw4w9WgXcQ">Grocery</a>
+      <a href="https://youtu.be/dQw4w9WgXcQ">Recipe</a>
+      <a href="https://youtu.be/dQw4w9WgXcQ" class="right">About</a>
+    </div>
+  
+    <div class=background>
+      <header id="line1">Find Fine Cuisine Find</header>
+      <header id="line2">Fine Cuisine Find Fine</header>
+      <header id="line3">Cuisine Find Fine Cuis</header>
+    </div>
+  
+    <div class = feature>
+      <form class = "container">
+        <input type="text" placeholder="Location.." id="fname" name="fname">
+      </form>
+    </div>
 
   
 
   <script src = "groceries.js"></script>
   <script src = "ingredients.js"></script>
   <script src = "yelp.js"></script>
+  <script src = "animate.js"></script>
 </body>
   
 </html>
